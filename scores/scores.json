@@ -45,13 +45,13 @@
       "BaQu2": 1,
       "BaQu3": 1,
       "BaQu4": 1,
-      "BaQu5": 0,
+      "BaQu5": 1,
       "BaQu6": 1
     }
   },
   "humanReadable": {
     "Advanced Queries": "7/7",
-    "finalTestScore": "FINAL SCORE: 12/13",
-    "Basic Queries": "5/6"
+    "finalTestScore": "FINAL SCORE: 13/13",
+    "Basic Queries": "6/6"
   }
 }

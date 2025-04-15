@@ -16,15 +16,6 @@ const selectAllBooks = async () => {
   return rows;
 };
 
-// shape
-// CREATE TABLE books (
-//   id SERIAL PRIMARY KEY,
-//   title text,
-//   genre text,
-//   pages int,
-//   is_movie boolean
-// );
-
 const selectAllTitlesAndGenres = async () => {
   const query = `
     SELECT title, genre
@@ -61,7 +52,7 @@ const updateShortBooksToMovies = async () => {
   const query = `
     UPDATE books
     SET is_movie = true
-    WHERE pages < 150 AND is_movie = false
+    WHERE pages < 150
     RETURNING *;
   `;
 
