@@ -32,6 +32,12 @@ const main = async () => {
 
   // Test your functions by console logging the returned value.
   console.log('All Books:', allBooks);
+  console.log('All Titles and Genres:', allTitlesAndGenres);
+  console.log('All Books Over 250 Pages:', allLongBooks);
+  console.log('Insert Dune Book. Return value:', duneBook);
+  console.log('Update Short Books to Movies. Return value:', updatedShortMovies);
+  console.log('Deleted Dune Book. Return Value:', deleted);
+  console.log('Final Check. All books to makes sure:', allBooks);
 
 
   // ---- DO NOT DELETE ----
