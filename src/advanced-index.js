@@ -25,7 +25,6 @@ const main = async () => {
 
   // ---- YOUR WORK ----
   // Advanced queries
-  // Test your functions by console logging the returned value.
   const numberOfBooks = await countNumberOfBooks();
   const longOrMovieBooks = await selectAllLongOrMovieBooks();
   const mediumBooks = await selectBooksBetween150And300Pages();
@@ -33,8 +32,16 @@ const main = async () => {
   const longestBook = await selectLongestBook();
   const aliasedTitleAndIsMovie = await aliasIsMovie();
   const genreCounts = await countBooksInGenres();
+  // Test your functions by console logging the returned value.
 
-
+  // The query file already has the relevant logs so... RIP
+  // console.log('Current number of books in the table:', numberOfBooks);
+  // console.log('Returns all columns of books with either pages > 250 or is_movie = true:', longOrMovieBooks);
+  // console.log('Returns all columns of books with 150 < pages < 300:', mediumBooks);
+  // console.log('Returns all columns of books ordered from shortest to longest:', orderedBooks);
+  // console.log('Returns all columns of the book with the most amount of pages:', longestBook);
+  // console.log('Returns columns (title, is_movie as Already Filmed):', aliasedTitleAndIsMovie);
+  // console.log('Returns the count of each book grouped by genre:', genreCounts);
 
   // ---- DO NOT DELETE ----
   // We remove the table rows (not the table) so we can run the queries again

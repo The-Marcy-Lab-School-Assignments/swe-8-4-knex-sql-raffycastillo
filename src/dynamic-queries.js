@@ -27,8 +27,21 @@ const multipleDynamicParamsQuery = async (pages, isMovie) => {
   return rows;
 };
 
+const betweenSpecifiedPagesQuery = async (start, end) => {
+  const query = `
+    SELECT *
+    FROM books
+    WHERE pages > ? AND pages < ?;
+  `;
+
+  const { rows } = await knex.raw(query, [start, end]);
+  console.log(`Books with pages that range between (non-inclusive) ${start}-${end}:`, rows);
+  return rows;
+};
+
 module.exports = {
   dangerousDynamicQuery,
   safeDynamicQuery,
   multipleDynamicParamsQuery,
+  betweenSpecifiedPagesQuery,
 };

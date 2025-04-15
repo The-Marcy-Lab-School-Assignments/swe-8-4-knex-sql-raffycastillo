@@ -8,51 +8,67 @@ was returned).
 */
 
 const selectAllBooks = async () => {
-  const query = ``;
-
-  // const { rows } = await knex.raw(query);
-  // return rows;
+  const query = `
+    SELECT *
+    FROM books;
+  `;
+  const { rows } = await knex.raw(query);
+  return rows;
 };
 
 const selectAllTitlesAndGenres = async () => {
-  const query = ``;
+  const query = `
+    SELECT title, genre
+    FROM books;
+  `;
 
-  // const { rows } = await knex.raw(query);
-  // return rows;
+  const { rows } = await knex.raw(query);
+  return rows;
 };
 
 const selectAllBooksOver250Pages = async () => {
-  const query = ``;
+  const query = `
+    SELECT *
+    FROM books
+    WHERE pages > 250;
+  `;
 
-  // const { rows } = await knex.raw(query);
-  // return rows;
+  const { rows } = await knex.raw(query);
+  return rows;
 };
 
 const insertDuneBook = async () => {
-  const query = ` 
-    YOUR QUERY HERE
+  const query = `
+    INSERT INTO books (title, genre, pages, is_movie)
+    VALUES ('Dune', 'Sci Fi', 500, false)
     RETURNING *;
   `;
 
-  // const { rows } = await knex.raw(query);
-  // return rows;
+  const { rows } = await knex.raw(query);
+  return rows;
 };
 
 const updateShortBooksToMovies = async () => {
-  const query = ` 
-    YOUR QUERY HERE
+  const query = `
+    UPDATE books
+    SET is_movie = true
+    WHERE pages < 150
     RETURNING *;
   `;
 
-  // const { rows } = await knex.raw(query);
-  // return rows;
+  const { rows } = await knex.raw(query);
+  return rows;
 };
 
 const deleteDuneBook = async () => {
-  const query = ``;
+  const query = `
+    DELETE FROM books
+    WHERE title = 'Dune'
+    RETURNING *
+  `;
 
-  // const { rowCount } = await knex.raw(query);
-  // return { rowCount };
+  const { rowCount } = await knex.raw(query);
+  return { rowCount };
 };
 
 module.exports = {
